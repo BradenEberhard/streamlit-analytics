@@ -21,4 +21,4 @@ def save(counts, service_account_json, collection_name):
     db = firestore.Client.from_service_account_json(service_account_json)
     col = db.collection(collection_name)
     doc = col.document("counts")
-    doc.set(counts)  # creates if doesn't exist
+    doc.set(counts, merge=True)  # creates if doesn't exist
