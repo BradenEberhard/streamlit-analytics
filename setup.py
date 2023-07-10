@@ -15,7 +15,7 @@ readme = (here / "README.md").read_text()
 
 setup(
     name="streamlit-analytics",
-    version=0.0.01,
+    version=version,
     author="Johannes Rieke",
     author_email="johannes.rieke@gmail.com",
     description="Track & visualize user interactions with your streamlit app",
