@@ -1,5 +1,5 @@
 from google.cloud import firestore
-
+import streamlit as st
 
 def load(counts, service_account_json, collection_name):
     """Load count data from firestore into `counts`."""
@@ -22,5 +22,5 @@ def save(counts, service_account_json, collection_name):
     col = db.collection(collection_name)
     
     doc = col.document("counts")
-    doc.delete()
+    st.write(counts)
     doc.set(counts)  # creates if doesn't exist
