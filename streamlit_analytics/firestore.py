@@ -22,4 +22,4 @@ def save(counts, service_account_json, collection_name):
     col = db.collection(collection_name)
     col.delete("counts)
     doc = col.document("counts")
-    doc.set(counts, merge=True)  # creates if doesn't exist
+    doc.set(counts)  # creates if doesn't exist
