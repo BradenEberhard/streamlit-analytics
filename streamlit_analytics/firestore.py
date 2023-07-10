@@ -20,6 +20,7 @@ def save(counts, service_account_json, collection_name):
     """Save count data from `counts` to firestore."""
     db = firestore.Client.from_service_account_json(service_account_json)
     col = db.collection(collection_name)
-    col.delete("counts")
+    
     doc = col.document("counts")
+    col.delete("counts")
     doc.set(counts)  # creates if doesn't exist
